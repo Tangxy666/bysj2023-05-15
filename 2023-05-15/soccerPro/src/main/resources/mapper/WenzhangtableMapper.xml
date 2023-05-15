@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangxy.soccerpro.mapper.WenzhangtableMapper">
+
+    <resultMap id="BaseResultMap" type="com.tangxy.soccerpro.entity.Wenzhangtable">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="biaoti" column="biaoti" jdbcType="VARCHAR"/>
+            <result property="bfnr" column="bfnr" jdbcType="VARCHAR"/>
+            <result property="zwnr" column="zwnr" jdbcType="VARCHAR"/>
+            <result property="fstime" column="fstime" jdbcType="VARCHAR"/>
+            <result property="fromwhere" column="fromwhere" jdbcType="VARCHAR"/>
+            <result property="imageurl" column="imageurl" jdbcType="VARCHAR"/>
+            <result property="dianzanshu" column="dianzanshu" jdbcType="BIGINT"/>
+            <result property="liulanlian" column="liulanlian" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,biaoti,bfnr,
+        zwnr,fstime,fromwhere,
+        imageurl,dianzanshu,liulanlian
+    </sql>
+</mapper>

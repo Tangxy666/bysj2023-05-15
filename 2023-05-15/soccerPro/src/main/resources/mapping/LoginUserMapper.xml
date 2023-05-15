@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangxy.soccerpro.mapper.LoginMapper">
+
+    <resultMap id="BaseResultMap" type="com.tangxy.soccerpro.entity.LoginUser">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="userName" jdbcType="VARCHAR" property="userName" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="zhuceTime" jdbcType="VARCHAR" property="zhuceTime" />
+    </resultMap>
+
+
+
+    <select id="selectLoginUser" resultType="com.tangxy.soccerpro.entity.LoginUser">
+        select * from logintable where id = #{id} and status=0
+    </select>
+
+    <select id="selectLoginUserAll" resultType="com.tangxy.soccerpro.entity.LoginUser">
+        select * from logintable where status=0
+    </select>
+
+    <select id="selectLoginUserByUserName" resultType="com.tangxy.soccerpro.entity.LoginUser">
+        select * from logintable where status=0 and userName=#{userName}
+    </select>
+
+    <select id="selectLoginUserByEmail" resultType="com.tangxy.soccerpro.entity.LoginUser">
+        select * from logintable where status=0 and email=#{email}
+    </select>
+
+    <update id="delectLoginUser" >
+        UPDATE logintable set status=status+1 where id = #{id} and status=0
+    </update>
+
+
+    <update id="updateLoginUser">
+        UPDATE logintable set userName=#{userName},password=#{password},email=#{email},status=#{status},zhuceTime=#{zhuceTime} where id =#{id}
+    </update>
+
+    <insert id="addLoginUser" parameterType="com.tangxy.soccerpro.entity.LoginUser" keyProperty="id">
+        INSERT INTO logintable(userName,password,email,status,zhuceTime,zhucecode) values(#{userName},#{password},#{email},#{status},#{zhuceTime},#{zhucecode})
+
+    </insert>
+
+
+
+</mapper>

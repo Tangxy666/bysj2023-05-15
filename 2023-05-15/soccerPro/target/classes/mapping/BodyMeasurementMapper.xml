@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangxy.soccerpro.mapper.BodyMeasurementMapper">
+
+
+    <select id="selectByuserName" resultType="com.tangxy.soccerpro.entity.BodyMeasurementDto"
+            parameterType="java.lang.String">
+
+        select * from bodyMeasurement where userName=#{userName}
+
+    </select>
+
+    <insert id="addByuserName" keyProperty="id">
+        INSERT INTO bodyMeasurement(userName,height,weight,speed100m,speed1000m,vitalcapacity,kickspeed) values(#{userName},#{height},#{weight},#{speed100m},#{speed1000m},#{vitalcapacity},#{kickspeed})
+    </insert>
+
+</mapper>

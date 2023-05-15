@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangxy.soccerpro.mapper.CarMapper">
+
+    <resultMap id="BaseResultMap" type="com.tangxy.soccerpro.entity.Car">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="vehiclemodel" column="vehicleModel" jdbcType="VARCHAR"/>
+            <result property="carcondition" column="carCondition" jdbcType="VARCHAR"/>
+            <result property="pricecar" column="priceCar" jdbcType="VARCHAR"/>
+            <result property="originalprice" column="originalPrice" jdbcType="VARCHAR"/>
+            <result property="carmapaddress" column="carMapAddress" jdbcType="VARCHAR"/>
+            <result property="state" column="state" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,vehicleModel,carCondition,
+        priceCar,originalPrice,carMapAddress,
+        state
+    </sql>
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangxy.soccerpro.mapper.PersonalInformationMapper">
+
+
+
+    <select id="selectbyUserName" resultType="com.tangxy.soccerpro.entity.PersonalInformation"
+            parameterType="java.lang.String">
+            select * from personalinformationTable where userName=#{userName}
+    </select>
+
+
+    <update id="uqdateByUserName" parameterType="java.lang.String">
+
+        Update personalinformationTable set userName=#{userName},email=#{email},
+                                            teamCode=#{teamCode},postCode=#{postCode} where userName=#{userName}
+    </update>
+
+    <insert id="addByUserName" parameterType="com.tangxy.soccerpro.entity.PersonalInformation" keyProperty="id">
+        INSERT INTO personalinformationTable(userName,email,teamCode,postCode) values(#{userName},#{email},#{teamCode},#{postCode})
+
+    </insert>
+
+</mapper>

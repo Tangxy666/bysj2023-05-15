@@ -1,0 +1,54 @@
+server:
+  port: 8090
+
+
+spring:
+  datasource:
+    username: root
+    password: "123456"
+    url: jdbc:mysql://localhost:3306/soccerpro?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    email: txy19126539017@163.com
+    # SMTP服务器
+    host: smtp.163.com
+    # 发送验证码邮箱
+    port: 465
+    username: txy19126539017
+    # 授权码
+    password: SYEUZBQXZTSRPBCC
+    # 编码
+    default-encoding: utf-8
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    timeout: 0
+    jedis:
+      pool:
+        max-active: 1000
+        max-wait: -1
+        max-idle: 10
+        min-idle: 2
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+
+logging:
+  level:
+    com.tangxy.soccerpro.mapper: debug
+
+
+
+
+
+
+
+
+
+
+
+
+
